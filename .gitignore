@@ -1,0 +1,4 @@
+.DS_Store
+.ipynb_checkpoints/
+bottleneck_features/DogVGG16Data.npz
+data/
