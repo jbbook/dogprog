@@ -1,4 +1,10 @@
 .DS_Store
 .ipynb_checkpoints/
 bottleneck_features/DogVGG16Data.npz
-data/
+dogImages/
+lfw/
+saved_models/
+resnet_imagenet/
+dog_model/
+__pycache__/
+bottleneck_features/
