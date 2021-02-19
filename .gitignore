@@ -10,3 +10,4 @@ dog_model/
 __pycache__/
 bottleneck_features/
 haarcascades/
+app/img_upload/

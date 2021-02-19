@@ -1,25 +1,23 @@
 // The JS code builds on the JS code from https://github.com/krishnaik06/Deployment-Deep-Learning-Model
 $(document).ready(function () {
-    //init
-    $('.image-section').hide();
-    $('#prediction-result').hide();
+    //initially hide predict button
+    $('#button-predict').hide();
 
-    // Upload Preview
+    // Upload image
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
                 $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
-                $('#imagePreview').hide();
-                $('#imagePreview').fadeIn(650);
+                $('.image-section').show();
+                $('#button-predict').show();
+                $('#prediction-result').hide();
             }
             reader.readAsDataURL(input.files[0]);
         }
     }
 
     $("#imageUpload").change(function () {
-        $('.image-section').show();
-        $('#button-predict').show();
         readURL(this);
     });
 
