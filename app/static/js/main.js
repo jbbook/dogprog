@@ -1,8 +1,8 @@
+// The JS code builds on the JS code from https://github.com/krishnaik06/Deployment-Deep-Learning-Model
 $(document).ready(function () {
-    // Init
+    //init
     $('.image-section').hide();
-    $('.loader').hide();
-    $('#result').hide();
+    $('#prediction-result').hide();
 
     // Upload Preview
     function readURL(input) {
@@ -16,37 +16,29 @@ $(document).ready(function () {
             reader.readAsDataURL(input.files[0]);
         }
     }
+
     $("#imageUpload").change(function () {
         $('.image-section').show();
-        $('#btn-predict').show();
-        $('#result').text('');
-        $('#result').hide();
+        $('#button-predict').show();
         readURL(this);
     });
 
-    // Predict
-    $('#btn-predict').click(function () {
-        var form_data = new FormData($('#upload-file')[0]);
+    // Predict dog breed
+    $('#button-predict').click(function () {
+        $('#prediction-result').hide();
+        var form_data = new FormData($('#upload-image')[0]);
 
-        // Show loading animation
         $(this).hide();
-        $('.loader').show();
 
-        // Make prediction by calling api /predict
         $.ajax({
             type: 'POST',
-            url: '/predict',
+            url: '/prediction',
             data: form_data,
             contentType: false,
-            cache: false,
             processData: false,
-            async: true,
             success: function (data) {
-                // Get and display the result
-                $('.loader').hide();
-                $('#result').fadeIn(600);
-                $('#result').text(data);
-                console.log('Success!');
+                $('#prediction-result').show();
+                $('#prediction-result').text(data);
             },
         });
     });

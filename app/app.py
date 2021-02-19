@@ -26,16 +26,15 @@ dog_detection_model = load_model("../resnet_imagenet")
 def index():
     return render_template('index.html')
 
-@app.route('/predict', methods=["GET", "POST"])
+@app.route('/prediction', methods=["GET", "POST"])
 
-def upload():
+def upload_images():
     """Upload image, predict breed, construct prediction statement."""
     if request.method == 'POST':
         file = request.files['file']
 
         basepath = os.path.dirname(__file__)
         fpath = os.path.join(basepath, 'img_upload', file.filename)
-        #print(fpath)
         file.save(fpath)
 
         prediction = predict_dog_breed(fpath)
