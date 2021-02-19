@@ -16,9 +16,9 @@ In this project, different techniques of computer vision (human face detection) 
 Additionally, the best working model is implemented within a web app to allow for an interactive dog breed detection experience.
 
 # File description
-app/ - Flask Webapp, for details see below. 
-test_images/ - images to test algorithm on.
-requirements/ - required python packages.
+app/ - Flask Webapp, for details see below.  
+test_images/ - images to test algorithm on.  
+requirements/ - required python packages.  
 dog_app.ipynb - ipynb where the model is trained and deployed. report.html is the html converted output of the notebook. inside the notebook, the trained models are saved. execution is needed before web app can be deployed. To execute the ipynb, download the [dog dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/dogImages.zip) into dogImages/, the [human dataset](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/lfw.zip) into lfw/, and the [ResNet50 bottleneck features](https://s3-us-west-1.amazonaws.com/udacity-aind/dog-project/DogResnet50Data.npz).
 
 extract_bottleneck_features.py - extract bottleneck features from pre-trained CNNs.
