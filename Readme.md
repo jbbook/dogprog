@@ -15,7 +15,7 @@ This repo makes use of a variety of python libraries:
 In this project, different techniques of computer vision (human face detection) as well as deep learning / CNNs (dog breed detection using Resnet) are explored. 
 Additionally, the best working model is implemented within a web app to allow for an interactive dog breed detection experience.
 
-#File description
+# File description
 app/ - Flask Webapp, for details see below. 
 test_images/ - images to test algorithm on.
 requirements/ - required python packages.
