@@ -32,9 +32,11 @@ def upload_images():
     """Upload image, predict breed, construct prediction statement."""
     if request.method == 'POST':
         file = request.files['file']
-
+        print('################################')
+        print(file)
         basepath = os.path.dirname(__file__)
         fpath = os.path.join(basepath, 'img_upload', file.filename)
+        print(fpath)
         file.save(fpath)
 
         prediction = predict_dog_breed(fpath)

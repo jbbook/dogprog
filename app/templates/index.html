@@ -40,25 +40,13 @@
         <div id="middle-info" class="mt-3">
 
         <div>
-            <form id="upload-image" method="post" enctype="multipart/form-data">
-                <label for="imageUpload" class="btn btn-primary">
-                    Choose image
-                </label>
-                <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+            <form id="upload-image" method="post" action="/prediction" enctype="multipart/form-data">
+                
+                <input type="file" name="file" onchange="readURL(this)" id="image" accept=".png, .jpg, .jpeg">
+                 <input type = "submit"/>
+
             </form>
 
-
-            <div class="image-section">
-
-                <div id="imagePreview"> </div>
-
-                <div>
-                    <button type="button" class="btn btn-primary" id="button-predict">Predict dog breed!</button>
-                </div>
-            </div>
-
-            <!-- The prediction will be shown here -->
-            <div id="prediction-result"></div>
 
         </div>
 
